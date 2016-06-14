@@ -2,7 +2,7 @@ var Sequelize = require('sequelize');
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var sequelize = new Sequelize('shisha', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
+var sequelize = new Sequelize('shisha', 'roberteek', 'sukkel123', {
 	host: 'localhost',
 	dialect: 'postgres',
 	define: {
@@ -33,11 +33,11 @@ var app = express();
 app.set( 'views', __dirname + '/views' )
 app.engine( 'html', require( 'ejs' ).renderFile )
 
-app.use( express.static( __dirname + '/static' ) )
+app.use( express.static( __dirname + '/public' ) )
 app.use( bodyParser.urlencoded( { extended: false } ) )
 
 app.get ( '/', function ( request, response ) {
-	response.render ( 'index.html' )  
+	response.render ( 'index.html' )
 } )
 
 sequelize.sync({force: false}).then(function () {
