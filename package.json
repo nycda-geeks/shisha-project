@@ -1,0 +1,25 @@
+{
+  "name": "shisha-project",
+  "version": "1.0.0",
+  "description": "Shishalounge finder project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nycda-geeks/shisha-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nycda-geeks/shisha-project/issues"
+  },
+  "homepage": "https://github.com/nycda-geeks/shisha-project#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "sequelize": "^3.23.3"
+  }
+}
