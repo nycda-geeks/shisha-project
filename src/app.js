@@ -2,11 +2,11 @@ var Sequelize = require('sequelize');
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express()
-app.use(bodyParser.urlencoded ({extended: false}));
-app.use(express.static('./static'));
+//app.use(bodyParser.urlencoded ({extended: false}));
+//app.use(express.static('./static'));
 
-//app.use( express.static( __dirname + '/static' ) )
-//app.use( bodyParser.urlencoded( { extended: false } ) )
+app.use( express.static( __dirname + '/public' ) )
+app.use( bodyParser.urlencoded( { extended: false } ) )
 
 
 // this means thats about the database called shisha
@@ -41,7 +41,10 @@ Menu.belongsTo(Lounge);
 
 
 
-app.set ("views", "src/views");
+//app.set ("views", "src/views");
+//app.engine( 'html', require( 'ejs' ).renderFile )
+
+app.set( 'views', __dirname + '/views' )
 app.engine( 'html', require( 'ejs' ).renderFile )
 
 
