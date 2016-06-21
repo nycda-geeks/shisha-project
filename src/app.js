@@ -44,24 +44,32 @@ Menu.belongsTo(Lounge);
 //app.set ("views", "src/views");
 //app.engine( 'html', require( 'ejs' ).renderFile )
 
-app.set( 'views', __dirname + '/views' )
-app.engine( 'html', require( 'ejs' ).renderFile )
+app.set( "views", __dirname + "/views" )
+app.set ("view engine","jade");
 
 //this is the index page
 app.get ( '/', function ( request, response ) {
-	response.render ( 'index.html' )  
+	response.render ( 'index' )  
 } )
 
 // this is the test page that renders the index
-app.get ('/test.html',function (request,response){
-    response.render('index.html')
+app.get ('/test',function (request,response){
+    response.render('index')
 })
 
-app.get('/lounge.html',function(request,response){
-    response.render('lounge.html')
-})
+//app.get('/lounge',function(request,response){
+//   		Lounge.findAll({
+//                     where: {
+//                     city: request.body
+//             }
+//                }).then(function(theposts){
+//
+//                response.render('lounge');
+//              
+//            })
+//})
 
-app.post('/test.html', function (request,response){
+app.post('/test', function (request,response){
     
     	Lounge.create({
             loungeName: request.body.loungeName,
@@ -71,7 +79,7 @@ app.post('/test.html', function (request,response){
             city: request.body.city,
             tel: request.body.tel
 	}).then(function(){
-                response.render('index.html')
+                response.render('index')
         })
 })
 
