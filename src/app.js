@@ -57,6 +57,9 @@ app.get ('/test.html',function (request,response){
     response.render('index.html')
 })
 
+app.get('/lounge.html',function(request,response){
+    response.render('lounge.html')
+})
 
 app.post('/test.html', function (request,response){
     
