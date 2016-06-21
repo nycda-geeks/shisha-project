@@ -77,101 +77,101 @@
                 <hr>
                 <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
                 <form action="/search" method="post">
-                    <input list="options">
+                    <form action="">
+                        <select name="options" onchange="showCustomer(this.value)">
+                        <option value="">Zoek naar...</option>
+                            <option value="city">Stad</option>
+                            <option value="loungeName">Naam</option>
+                            <option value="loungeStreet">Straat</option>
+                        </select>
+                    </form>
 
-                    <datalist id="options">
-                      <option value="Stad">
-                          <option value="Naam">
-                              <option value="Straat">
-                              </datalist>
-                              <!-- datalists screw up html indentions -->
-                              
-                              <input type="text" name="entry">
-                              <input type="submit" value="post">
-                          </form>
-                          <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-                      </div>
-                  </div>
-              </header>
+                    <input type="text" name="entry">
+                    <input type="submit" value="post">
+                </form>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+            </div>
+        </div>
+    </header>
 
-              <section class="bg-primary" id="about">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2 text-center">
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
 
-                            <h2 class="section-heading">De leukste Shisha Lounges</h2>
-                            <hr class="light">
-                            <p class="text-faded">Met zorg geseleteerd!</p>
-                            <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="services">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-
-                            <h2 class="section-heading">Hier komt add lounge</h2>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 text-center">
-                            <div class="service-box">
-
-
-
-                            </div>
-                        </div><br>
-                        <form method="post" action="/">
-                           <input type="text" name="loungeName"> Name of your lounge<br>
-                           <input type="text" name="streetName"> Streetname<br>
-                           <input type="text" name="houseNumber"> House number<br>
-                           <input type="text" name="postcode"> Postcode<br>
-                           <input type="text" name="city"> City<br>
-                           <input type="text" name="tel"> Phone number<br>
-                           <input type="submit" value="Verzend">
-                       </form>
-
-
-
-                   </div>
-               </div>
-           </section>
-
-
-           <section id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 text-center">
-                        <h2 class="section-heading">Let's Get In Touch!</h2>
-                        <hr class="primary">
-
-                        <p>Contact lan</p>
-                    </div>
+                    <h2 class="section-heading">De leukste Shisha Lounges</h2>
+                    <hr class="light">
+                    <p class="text-faded">Met zorg geseleteerd!</p>
+                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
+                    <h2 class="section-heading">Hier komt add lounge</h2>
 
-        <!-- Plugin JavaScript -->
-        <script src="js/scrollreveal.min.js"></script>
-        <script src="js/jquery.easing.min.js"></script>
-        <script src="js/jquery.fittext.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
 
-        <!-- Custom Theme JavaScript -->
-        <script src="js/creative.js"></script>
 
-    </body>
 
-    </html>
+                    </div>
+                </div><br>
+                <form method="post" action="/">
+                 <input type="text" name="loungeName"> Name of your lounge<br>
+                 <input type="text" name="streetName"> Streetname<br>
+                 <input type="text" name="houseNumber"> House number<br>
+                 <input type="text" name="postcode"> Postcode<br>
+                 <input type="text" name="city"> City<br>
+                 <input type="text" name="tel"> Phone number<br>
+                 <input type="submit" value="Verzend">
+             </form>
+
+
+
+         </div>
+     </div>
+ </section>
+
+
+ <section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Let's Get In Touch!</h2>
+                <hr class="primary">
+
+                <p>Contact lan</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/scrollreveal.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/creative.js"></script>
+
+</body>
+
+</html>
