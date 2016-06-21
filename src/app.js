@@ -57,17 +57,11 @@ app.get ('/test',function (request,response){
     response.render('index')
 })
 
-//app.get('/lounge',function(request,response){
-//   		Lounge.findAll({
-//                     where: {
-//                     city: request.body
-//             }
-//                }).then(function(theposts){
-//
-//                response.render('lounge');
-//              
-//            })
-//})
+app.get('/lounge',function(request,response){
+            city = request.query.city
+            console.log(city)
+                response.render('lounge');
+})
 
 app.post('/test', function (request,response){
     
