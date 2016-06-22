@@ -1,5 +1,5 @@
 .section-heading{
-    color: #d70f64;
+    color: rgb(215, 15, 100);
 }
 
 .text-faded{
@@ -10,4 +10,100 @@
 .bg-primary{
     background-color: white;
 
+}
+
+#map-canvas {
+	width:33.3333%;
+    height:calc(100% - 0);
+    position:absolute;
+    right:16px;
+    top:50px;
+    bottom:0;
+    overflow:hidden;
+}
+
+header#city {
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url('../img/header-city.jpg');
+  text-align: center;
+  color: white;
+}
+
+
+/*SHISHA GRID*/
+
+#shisha-city .shisha-city-item {
+    margin: 0 0 15px;
+    right: 0
+}
+#shisha-city .shisha-city-item .shisha-city-link {
+    display: block;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto
+}
+#shisha-city .shisha-city-item .shisha-city-link .shisha-city-hover {
+    background: rgba(215, 15, 100, .9);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all ease .5s;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s
+}
+#shisha-city .shisha-city-item .shisha-city-link .shisha-city-hover:hover {
+    opacity: 1
+}
+#shisha-city .shisha-city-item .shisha-city-link .shisha-city-hover .shisha-city-hover-content {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
+    top: 50%;
+    margin-top: -12px;
+    color: #fff
+}
+#shisha-city .shisha-city-item .shisha-city-link .shisha-city-hover .shisha-city-hover-content i {
+    margin-top: -12px
+}
+#shisha-city .shisha-city-item .shisha-city-link .shisha-city-hover .shisha-city-hover-content h3, #shisha-city .shisha-city-item .shisha-city-link .shisha-city-hover .shisha-city-hover-content h4 {
+    margin: 0
+}
+#shisha-city .shisha-city-item .shisha-city-caption {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    text-align: center;
+    padding: 25px
+}
+#shisha-city .shisha-city-item .shisha-city-caption h4 {
+    margin: 0
+}
+#shisha-city .shisha-city-item .shisha-city-caption p {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    margin: 0
+}
+#shisha-city * {
+    z-index: 2
+}
+
+@media (min-width:767px) {
+    #shisha-city .shisha-city-item {
+        margin: 0 0 30px
+    }
+}
+
+h4.shisha-title{
+    text-transform: uppercase;
+    color: rgb(215, 15, 100);
 }

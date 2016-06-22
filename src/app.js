@@ -144,6 +144,11 @@ app.post('/', function (request,response){
 	})
 })
 
+app.get('/amsterdam',function (request,response){
+    response.render('amsterdam.html')
+})
+
+
 sequelize.sync({force: false})
 var server = app.listen(3000 , function (){
 
