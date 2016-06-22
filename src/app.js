@@ -42,7 +42,7 @@ Lounge.hasMany(Menu);
 Menu.belongsTo(Lounge);
 
 app.set( 'views', __dirname + '/views' )
-app.engine( 'html', require( 'ejs' ).renderFile )
+app.set('view engine', 'jade')
 
 //this is the index page
 app.get ( '/', function ( request, response ) {

@@ -107,3 +107,11 @@ h4.shisha-title{
     text-transform: uppercase;
     color: rgb(215, 15, 100);
 }
+
+
+/*google maps*/
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+}
