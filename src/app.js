@@ -59,8 +59,16 @@ app.get ('/test',function (request,response){
 
 app.get('/lounge',function(request,response){
             city = request.query.city
-            console.log(city)
-                response.render('lounge');
+                
+                Lounge.findAll({
+                    where:{
+                        city: request.query.city
+                    }
+                }).then(function(thelounge){
+                    response.render('lounge',{lijst: thelounge});
+                })
+            
+                
 })
 
 app.post('/test', function (request,response){

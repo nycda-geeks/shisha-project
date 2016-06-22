@@ -7,3 +7,13 @@
 html
     title TODO supply a title
     body
+    h1 lijst met de lounges
+    p ------------------------
+        each lounge in lijst
+            h1= lounge.loungeName
+            h3= lounge.streetName
+            h3= lounge.houseNumber
+            h3= lounge.postcode
+            h3= lounge.city
+            h3= lounge.tel
+            
