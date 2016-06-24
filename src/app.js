@@ -49,10 +49,6 @@ app.get ( '/', function ( request, response ) {
 	response.render ( 'index' )
 } )
 
-app.get ('/test',function (request,response){
-	response.render('index')
-})
-
 app.get('/lounge',function(request,response){
 	city = request.query.city
 
@@ -65,61 +61,57 @@ app.get('/lounge',function(request,response){
 	})	
 })
 
-app.get ( '/results', function ( request, respomse ) {
+app.get ( '/results', function ( request, response ) {
 	response.render ( 'results', {
-		loungeName: loungeName,
-		streetName: streetName,
-		houseNumber: houseNumber,
-		postcode: postcode,
-		city: city,
-		tel: tel
+		lounges: lounges
 	} )
 } )
 
 app.post ( '/search', function ( request, response ) { 
-	if ( request.body.options == "Stad") {
-		key = city
+	var input = request.body.entry
+	var searchParameter = input.toLowerCase();
+
+	if ( request.body.options == "city") {
+		Lounge.findAll({
+			where: {
+				city: searchParameter
+			}
+		}).then(function(lounges){
+			response.render( 'results', {
+				lounges: lounges
+			} )
+		})
 	}
-	else if ( request.body.options == "Naam") {
-		key = loungeName
+	else if ( request.body.options == "loungeName") {
+		Lounge.findAll({
+			where: {
+				loungeName: searchParameter
+			}
+		}).then(function(lounges){
+			response.render( 'results', {
+				lounges: lounges
+			} )
+		})
 	}
-	else if ( request.body.options == "Straat") {
-		key = streetName
+	else if ( request.body.options == "loungeStreet") {
+		Lounge.findAll({
+			where: {
+				loungeStreet: searchParameter
+			}
+		}).then(function(lounges){
+			response.render( 'results', {
+				lounges: lounges
+			} )
+		})
 	}
 	else {
 		response.send("Please choose a search parameter")
 	}
-	Lounge.findall({
-		where: {
-			key: request.body.entry
-		}
-	})
-	response.render( 'results', {
-		loungeName: loungeName,
-		streetName: streetName,
-		houseNumber: houseNumber,
-		postcode: potcode,
-		city: city,
-		tel: tel
-	} )
-} )
+})
 
 // this is the test page that renders the index
 app.get ('/test',function (request,response){
 	response.render('index')
-})
-
-app.post('/test', function (request,response){
-	Lounge.create({
-		loungeName: request.body.loungeName,
-		streetName: request.body.streetName,
-		houseNumber: request.body.houseNumber,
-		postcode: request.body.postcode,
-		city: request.body.city,
-		tel: request.body.tel
-	}).then(function(){
-		response.render('index')
-	})
 })
 
 app.get ('/amsterdam', function ( request, response ) {
@@ -127,14 +119,10 @@ app.get ('/amsterdam', function ( request, response ) {
 		where: {
 			city: amsterdam
 		}
-	})
-	response.render( 'amsterdam', { 
-		loungeName: loungeName,
-		streetName: streetName,
-		houseNumber: houseNumber,
-		postcode: postcode,
-		city: city,
-		tel: tel
+	}).then(function(){
+		response.render( 'amsterdam', { 
+			lounges: lounges
+		})
 	})
 })
 
@@ -143,14 +131,10 @@ app.get ('/rotterdam', function ( request, response ) {
 		where: {
 			city: rotterdam
 		}
-	})
-	response.render( 'rotterdam', { 
-		loungeName: loungeName,
-		streetName: streetName,
-		houseNumber: houseNumber,
-		postcode: potcode,
-		city: city,
-		tel: tel
+	}).then(function(){
+		response.render( 'rotterdam', { 
+			lounges: lounges
+		})
 	})
 })
 
@@ -159,28 +143,31 @@ app.get ('/utrecht', function ( request, response ) {
 		where: {
 			city: utrecht
 		}
-	})
-	response.render( 'utrecht', { 
-		loungeName: loungeName,
-		streetName: streetName,
-		houseNumber: houseNumber,
-		postcode: postcode,
-		city: city,
-		tel: tel
+	}).then(function(){
+		response.render( 'utrecht', { 
+			lounges: lounges
+		})
 	})
 })
 
 app.post('/', function (request,response){
+	var stad = request.body.city
+	var straat = request.body.streetName
+	var naam = request.body.loungeName
+
+	var city = stad.toLowerCase()
+	var street = straat.toLowerCase()
+	var name = naam.toLowerCase()
 
 	Lounge.create({
-		loungeName: request.body.loungeName,
-		streetName: request.body.streetName,
+		loungeName: name,
+		streetName: street,
 		houseNumber: request.body.houseNumber,
 		postcode: request.body.postcode,
-		city: request.body.city,
+		city: city,
 		tel: request.body.tel
 	}).then(function(){
-		response.render('test')
+		response.render('index')
 	})
 })
 

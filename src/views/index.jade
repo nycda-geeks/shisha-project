@@ -48,12 +48,11 @@ html(lang='en')
           p
             | Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!
           form(action='/search', method='post')
-            form(action='')
-              select(name='options', onchange='showCustomer(this.value)')
-                option(value='') Zoek naar...
-                option(value='city') Stad
-                option(value='loungeName') Naam
-                option(value='loungeStreet') Straat
+            select(name='options', onchange='showCustomer(this.value)')
+              option(value='') Zoek naar...
+              option(value='city') Stad
+              option(value='loungeName') Naam
+              option(value='loungeStreet') Straat
             input(type='text', name='entry')
             input(type='submit', value='post')
           a.btn.btn-primary.btn-xl.page-scroll(href='#about') Find Out More
