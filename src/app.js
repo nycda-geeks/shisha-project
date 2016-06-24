@@ -42,14 +42,14 @@ Lounge.hasMany(Menu);
 Menu.belongsTo(Lounge);
 
 app.set( 'views', __dirname + '/views' )
-app.engine( 'html', require( 'ejs' ).renderFile )
+app.set('view engine', 'jade')
 
 //this is the index page
 app.get ( '/', function ( request, response ) {
 	response.render ( 'index.html' )
 } )
 
-app.post ( '/search', function ( request, response ) { 
+app.post ( '/search', function ( request, response ) {
 	if ( request.body.options == "Stad") {
 		key = city
 	}
@@ -62,7 +62,7 @@ app.post ( '/search', function ( request, response ) {
 	else {
 		response.send("Please choose a search parameter")
 	}
-	Post.findall({
+	Lounge.findall({
 		where: {
 			key: request.body.entry
 		}
@@ -75,7 +75,7 @@ app.post ( '/search', function ( request, response ) {
 		city: city,
 		tel: tel
 	})
-} )
+})
 
 // this is the test page that renders the index
 app.get ('test.html',function (request,response){
@@ -83,12 +83,12 @@ app.get ('test.html',function (request,response){
 })
 
 app.get ('/amsterdam', function ( request, response ) {
-	Post.findAll({
+	Lounge.findAll({
 		where: {
 			city: amsterdam
 		}
 	})
-	response.render( 'amsterdam.html', { 
+	response.render( 'amsterdam.html', {
 		loungeName: loungeName,
 		streetName: streetName,
 		houseNumber: houseNumber,
@@ -99,12 +99,12 @@ app.get ('/amsterdam', function ( request, response ) {
 })
 
 app.get ('/rotterdam', function ( request, response ) {
-	Post.findAll({
+	Lounge.findAll({
 		where: {
 			city: rotterdam
 		}
 	})
-	response.render( 'rotterdam.html', { 
+	response.render( 'rotterdam.html', {
 		loungeName: loungeName,
 		streetName: streetName,
 		houseNumber: houseNumber,
@@ -115,12 +115,12 @@ app.get ('/rotterdam', function ( request, response ) {
 })
 
 app.get ('/utrecht', function ( request, response ) {
-	Post.findAll({
+	Lounge.findAll({
 		where: {
 			city: utrecht
 		}
 	})
-	response.render( 'utrecht.html', { 
+	response.render( 'utrecht.html', {
 		loungeName: loungeName,
 		streetName: streetName,
 		houseNumber: houseNumber,
@@ -143,6 +143,7 @@ app.post('/', function (request,response){
 		response.render('test.html')
 	})
 })
+
 
 sequelize.sync({force: false})
 var server = app.listen(3000 , function (){
