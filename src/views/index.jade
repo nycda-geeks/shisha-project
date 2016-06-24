@@ -2,14 +2,12 @@ doctype html
 html(lang='en')
   head
     script(src="https://code.jquery.com/jquery-2.2.0.min.js")
-    
-    
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='description', content='')
     meta(name='author', content='')
-    title Creative - Start Bootstrap Theme
+    title Shisha International 
     // Bootstrap Core CSS
     link(rel='stylesheet', href='css/bootstrap.min.css', type='text/css')
     // Custom Fonts
@@ -25,6 +23,8 @@ html(lang='en')
     //if lt IE 9
       script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
       script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+
+    link(rel='stylesheet', href='css/mystyle.css', type='text/css')
   body#page-top
     nav#mainNav.navbar.navbar-default.navbar-fixed-top
       .container-fluid
@@ -35,7 +35,7 @@ html(lang='en')
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand.page-scroll(href='#page-top') Start Bootstrap
+          a.navbar-brand.page-scroll(href='#page-top') Shisha Finder
         // Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
@@ -53,6 +53,10 @@ html(lang='en')
           h1 Find the best Shisha lounges near you
           hr
           a.btn.btn-primary.btn-xl.page-scroll(href='#services') Find Out More
+          p
+            | Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!
+
+          a.btn.btn-primary.btn-xl.page-scroll(href='#about') Find Out More
     section#about.bg-primary
       .container
         .row
@@ -67,21 +71,7 @@ html(lang='en')
           .col-lg-12.text-center
             h2.section-heading Hier komt add lounge
             hr.primary
-      .container
-        .row
-          .col-lg-3.col-md-6.text-center
-            .service-box
-          //
-            <br>
-            <form method="post" action="test.html">
-            <input type="text" name="loungeName"> Name of your lounge<br>
-            <input type="text" name="streetName"> Streetname<br>
-            <input type="text" name="houseNumber"> House number<br>
-            <input type="text" name="postcode"> Postcode<br>
-            <input type="text" name="city"> City<br>
-            <input type="text" name="tel"> Phone number<br>
-            <input type="submit" value="Verzend">
-            </form>
+
           button.btn.btn-primary.btn-lg(data-toggle='modal', data-target='#myModalNorm')
             | Add a lounge
           // Modal
@@ -116,6 +106,7 @@ html(lang='en')
                 .modal-footer
                   button.btn.btn-default(type='button', data-dismiss='modal')
                     | Close
+
     section#contact
       .container
         .row
