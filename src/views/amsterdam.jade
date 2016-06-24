@@ -18,17 +18,15 @@ html(lang='en')
 		// Custom CSS
 		link(rel='stylesheet', href='css/creative.css', type='text/css')
 		link(rel='stylesheet', href='css/mystyle.css', type='text/css')
-		script(src='http://maps.googleapis.com/maps/api/js')
+		// Scripts
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js')
+		// Toggle Maps on click
 		script.
-			function initialize() {
-			var mapProp = {
-			center:new google.maps.LatLng(51.508742,-0.120850),
-			zoom:5,
-			mapTypeId:google.maps.MapTypeId.ROADMAP
-			};
-			var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-			}
-			google.maps.event.addDomListener(window, 'load', initialize);
+			$(document).ready(function(){
+			$("#maps-button").click(function(){
+			$("#map").slideToggle();
+			});
+			});
 	body#page-top
 		nav#mainNav.navbar.navbar-default.navbar-fixed-top
 			.container-fluid
@@ -55,15 +53,18 @@ html(lang='en')
 			.header-content
 				.header-content-inner
 					h1 Find the best Shisha lounges in Amsterdam
+		// View-options
+		#maps-bar.row
+			.col-lg-12.text-center
+				a#maps-button.btn.btn-info.btn-lg
+					span.glyphicon.glyphicon-map-marker
+					|  Map
+			
+		// Google maps
+		#map
+		// Shisha grid
 		section#shisha-city.bg-light-gray
 			.container
-				//
-					<div class="row">
-					<div class="col-lg-12 text-center">
-					<h2 class="section-heading">shisha-city</h2>
-					<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-					</div>
-					</div>
 				.row
 					.col-md-4.col-sm-6.shisha-city-item
 						a.shisha-city-link(href='#shisha-cityModal1', data-toggle='modal')
@@ -174,4 +175,12 @@ html(lang='en')
 							.shisha-city-caption
 								h4.shisha-title Dreams
 								p.text-muted No reservation needed
-		// <div id="map-canvas"></div>
+		script.
+			function initMap() {
+			var mapDiv = document.getElementById('map');
+			var map = new google.maps.Map(mapDiv, {
+			center: {lat: 52.3702160, lng: 4.8951680},
+			zoom: 12
+			});
+			}
+		script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDSfiU9q-2LdmErSm1EpI0Ns9cJb4otyzo&callback=initMap')

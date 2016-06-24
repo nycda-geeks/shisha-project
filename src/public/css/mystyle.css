@@ -115,3 +115,9 @@ h4.shisha-title{
     height: 400px;
     background-color: grey;
 }
+
+#maps-button{
+    border-radius: 6px;
+    margin: 5px;
+    float: right;
+}

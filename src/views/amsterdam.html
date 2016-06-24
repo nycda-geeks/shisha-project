@@ -34,8 +34,8 @@
     <!-- Toggle Maps on click -->
     <script>
     $(document).ready(function(){
-        $("button").click(function(){
-            $("#map").toggle();
+        $("#maps-button").click(function(){
+            $("#map").slideToggle();
         });
     });
     </script>
@@ -92,7 +92,16 @@
     <!-- View-options  -->
     <div id="maps-bar" class="row">
       <div class="col-lg-12 text-center">
-          <button>maps</button>
+        <a id="maps-button" class="btn btn-info btn-lg">
+            <span class="glyphicon glyphicon-map-marker"></span> Map
+        </a>
+          <!-- <ul>
+              <li>Maps</li>
+              <li></li>
+              <li></li>
+              <li></li>
+          </ul>
+          <button>maps</button> -->
       </div>
     </div>
 
