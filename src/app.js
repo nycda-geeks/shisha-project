@@ -41,12 +41,39 @@ var Menu = sequelize.define('menu', {
 Lounge.hasMany(Menu);
 Menu.belongsTo(Lounge);
 
-app.set( 'views', __dirname + '/views' )
-app.engine( 'html', require( 'ejs' ).renderFile )
+app.set('views', './src/views');
+app.set('view engine', 'jade');
 
 //this is the index page
 app.get ( '/', function ( request, response ) {
-	response.render ( 'index.html' )
+	response.render ( 'index' )
+} )
+
+app.get ('/test',function (request,response){
+	response.render('index')
+})
+
+app.get('/lounge',function(request,response){
+	city = request.query.city
+
+	Lounge.findAll({
+		where:{
+			city: request.query.city
+		}
+	}).then(function(thelounge){
+		response.render('lounge',{lijst: thelounge});
+	})	
+})
+
+app.get ( '/results', function ( request, respomse ) {
+	response.render ( 'results', {
+		loungeName: loungeName,
+		streetName: streetName,
+		houseNumber: houseNumber,
+		postcode: postcode,
+		city: city,
+		tel: tel
+	} )
 } )
 
 app.post ( '/search', function ( request, response ) { 
@@ -62,33 +89,46 @@ app.post ( '/search', function ( request, response ) {
 	else {
 		response.send("Please choose a search parameter")
 	}
-	Post.findall({
+	Lounge.findall({
 		where: {
 			key: request.body.entry
 		}
 	})
-	response.send( "Search completed:" + "<br>" + "here will go results", {
+	response.render( 'results', {
 		loungeName: loungeName,
 		streetName: streetName,
 		houseNumber: houseNumber,
 		postcode: potcode,
 		city: city,
 		tel: tel
-	})
+	} )
 } )
 
 // this is the test page that renders the index
-app.get ('test.html',function (request,response){
-	response.render('index.html')
+app.get ('/test',function (request,response){
+	response.render('index')
+})
+
+app.post('/test', function (request,response){
+	Lounge.create({
+		loungeName: request.body.loungeName,
+		streetName: request.body.streetName,
+		houseNumber: request.body.houseNumber,
+		postcode: request.body.postcode,
+		city: request.body.city,
+		tel: request.body.tel
+	}).then(function(){
+		response.render('index')
+	})
 })
 
 app.get ('/amsterdam', function ( request, response ) {
-	Post.findAll({
+	Lounge.findAll({
 		where: {
 			city: amsterdam
 		}
 	})
-	response.render( 'amsterdam.html', { 
+	response.render( 'amsterdam', { 
 		loungeName: loungeName,
 		streetName: streetName,
 		houseNumber: houseNumber,
@@ -99,12 +139,12 @@ app.get ('/amsterdam', function ( request, response ) {
 })
 
 app.get ('/rotterdam', function ( request, response ) {
-	Post.findAll({
+	Lounge.findAll({
 		where: {
 			city: rotterdam
 		}
 	})
-	response.render( 'rotterdam.html', { 
+	response.render( 'rotterdam', { 
 		loungeName: loungeName,
 		streetName: streetName,
 		houseNumber: houseNumber,
@@ -115,12 +155,12 @@ app.get ('/rotterdam', function ( request, response ) {
 })
 
 app.get ('/utrecht', function ( request, response ) {
-	Post.findAll({
+	Lounge.findAll({
 		where: {
 			city: utrecht
 		}
 	})
-	response.render( 'utrecht.html', { 
+	response.render( 'utrecht', { 
 		loungeName: loungeName,
 		streetName: streetName,
 		houseNumber: houseNumber,
@@ -140,7 +180,7 @@ app.post('/', function (request,response){
 		city: request.body.city,
 		tel: request.body.tel
 	}).then(function(){
-		response.render('test.html')
+		response.render('test')
 	})
 })
 

@@ -1,0 +1,14 @@
+doctype html
+html
+	head
+		script(src="https://code.jquery.com/jquery-2.2.0.min.js")
+	body
+		h1 Search results
+		div
+			each lounge in lounges
+				h3= lounge.loungeName
+				h3= lounge.tel
+				h3= lounge.postcode
+				h3= lounge.city
+				h3= lounge.streetName
+				h3= lounge.houseNumber

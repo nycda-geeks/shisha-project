@@ -1,0 +1,115 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Shisha International 
+    // Bootstrap Core CSS
+    link(rel='stylesheet', href='css/bootstrap.min.css', type='text/css')
+    // Custom Fonts
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='font-awesome/css/font-awesome.min.css', type='text/css')
+    // Plugin CSS
+    link(rel='stylesheet', href='css/magnific-popup.css', type='text/css')
+    // Custom CSS
+    link(rel='stylesheet', href='css/creative.css', type='text/css')
+    link(rel='stylesheet', href='css/mystyle.css', type='text/css')
+  body#page-top
+    nav#mainNav.navbar.navbar-default.navbar-fixed-top
+      .container-fluid
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand.page-scroll(href='#page-top') Shisha Finder
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a.page-scroll(href='#about') About
+            li
+              a.page-scroll(href='#services') Services
+            li
+              a.page-scroll(href='#contact') Contact
+        // /.navbar-collapse
+      // /.container-fluid
+    header
+      .header-content
+        .header-content-inner
+          h1 Find the best Shisha lounges near you
+          hr
+          p
+            | Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!
+          form(action='/search', method='post')
+            form(action='')
+              select(name='options', onchange='showCustomer(this.value)')
+                option(value='') Zoek naar...
+                option(value='city') Stad
+                option(value='loungeName') Naam
+                option(value='loungeStreet') Straat
+            input(type='text', name='entry')
+            input(type='submit', value='post')
+          a.btn.btn-primary.btn-xl.page-scroll(href='#about') Find Out More
+    section#about.bg-primary
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2.text-center
+            h2.section-heading De leukste Shisha Lounges
+            hr.light
+            p.text-faded Met zorg geseleteerd!
+            a.page-scroll.btn.btn-default.btn-xl.sr-button(href='#services') Get Started!
+    section#services
+      .container
+        .row
+          .col-lg-12.text-center
+            h2.section-heading Hier komt add lounge
+      .container
+        .row
+          .col-lg-3.col-md-6.text-center
+            .service-box
+          br
+          form(method='post', action='/')
+            input(type='text', name='loungeName')
+            |  Name of your lounge
+            br
+            input(type='text', name='streetName')
+            |  Streetname
+            br
+            input(type='text', name='houseNumber')
+            |  House number
+            br
+            input(type='text', name='postcode')
+            |  Postcode
+            br
+            input(type='text', name='city')
+            |  City
+            br
+            input(type='text', name='tel')
+            |  Phone number
+            br
+            input(type='submit', value='Verzend')
+    section#contact
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2.text-center
+            h2.section-heading Let's Get In Touch!
+            hr.primary
+            p Contact lan
+    // jQuery
+    script(src='js/jquery.js')
+    // Bootstrap Core JavaScript
+    script(src='js/bootstrap.min.js')
+    // Plugin JavaScript
+    script(src='js/scrollreveal.min.js')
+    script(src='js/jquery.easing.min.js')
+    script(src='js/jquery.fittext.js')
+    script(src='js/jquery.magnific-popup.min.js')
+    // Custom Theme JavaScript
+    script(src='js/creative.js')
