@@ -41,7 +41,7 @@ var Menu = sequelize.define('menu', {
 Lounge.hasMany(Menu);
 Menu.belongsTo(Lounge);
 
-<<<<<<< HEAD
+
 
 
 
