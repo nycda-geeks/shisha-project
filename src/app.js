@@ -171,6 +171,7 @@ app.post('/', function (request,response){
 	})
 })
 
+
 sequelize.sync({force: false})
 var server = app.listen(3000 , function (){
 
