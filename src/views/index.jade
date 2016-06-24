@@ -1,6 +1,9 @@
 doctype html
 html(lang='en')
   head
+    script(src="https://code.jquery.com/jquery-2.2.0.min.js")
+    
+    
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
@@ -103,7 +106,7 @@ html(lang='en')
                       input.form-control(type='text', name='postcode')
                     .form-group
                       label City
-                      select(name='city', id='people')
+                      select(name='city', id='lijst')
                         option(value="amsterdam") AMSTERDAM
                     .form-group
                       label Phone number
@@ -131,3 +134,4 @@ html(lang='en')
     script(src='js/jquery.magnific-popup.min.js')
     // Custom Theme JavaScript
     script(src='js/creative.js')
+    script(src="js/lijst.js")

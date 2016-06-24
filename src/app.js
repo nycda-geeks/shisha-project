@@ -49,7 +49,7 @@ app.set ("view engine","jade");
 
 //this is the index page
 app.get ( '/', function ( request, response ) {
-	response.render ( 'index' )  
+	response.render ( 'index')  
 } )
 
 // this is the test page that renders the index
@@ -68,7 +68,7 @@ app.get('/lounge',function(request,response){
                     response.render('lounge',{lijst: thelounge});
                 })
             
-                
+             
 })
 
 app.post('/test', function (request,response){
