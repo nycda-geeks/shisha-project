@@ -1,14 +1,65 @@
 doctype html
-html
+html(lang='en')
 	head
-		script(src="https://code.jquery.com/jquery-2.2.0.min.js")
-	body
-		h1 Search results
-		div
-			each lounge in lounges
-				h3= lounge.loungeName
-				h3= lounge.tel
-				h3= lounge.postcode
-				h3= lounge.city
-				h3= lounge.streetName
-				h3= lounge.houseNumber
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		title Shisha International 
+		// Bootstrap Core CSS
+		link(rel='stylesheet', href='css/bootstrap.min.css', type='text/css')
+		// Custom Fonts
+		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', rel='stylesheet', type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic', rel='stylesheet', type='text/css')
+		link(rel='stylesheet', href='font-awesome/css/font-awesome.min.css', type='text/css')
+		// Plugin CSS
+		link(rel='stylesheet', href='css/magnific-popup.css', type='text/css')
+		// Custom CSS
+		link(rel='stylesheet', href='css/creative.css', type='text/css')
+		link(rel='stylesheet', href='css/mystyle.css', type='text/css')
+		// Scripts
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js')
+		// Toggle Maps on click
+		script.
+			$(document).ready(function(){
+			$("#maps-button").click(function(){
+			$("#map").slideToggle();
+			});
+			});
+	body#page-top
+		nav#mainNav.navbar.navbar-default.navbar-fixed-top
+			.container-fluid
+				// Brand and toggle get grouped for better mobile display
+				.navbar-header
+					button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand.page-scroll(href='#page-top') Shisha Finder
+				// Collect the nav links, forms, and other content for toggling
+				#bs-example-navbar-collapse-1.collapse.navbar-collapse
+					ul.nav.navbar-nav.navbar-right
+						li
+							a.page-scroll(href='#about') About
+						li
+							a.page-scroll(href='#services') Services
+						li
+							a.page-scroll(href='#contact') Contact
+				// /.navbar-collapse
+				// /.container-fluid
+		header#city
+			.header-content
+				.header-content-inner
+					h1 Search Results
+		// View-options
+		#maps-bar.row
+			div
+				each lounge in lounges
+					h3= lounge.loungeName
+					h3= lounge.tel
+					h3= lounge.postcode
+					h3= lounge.city
+					h3= lounge.streetName
+					h3= lounge.houseNumber

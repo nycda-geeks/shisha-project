@@ -48,6 +48,11 @@ app.get ( '/', function ( request, response ) {
 	response.render ( 'index')
 } )
 
+// this is the test page that renders the index
+app.get ('/test',function (request,response){
+    response.render('index')
+})
+
 app.get('/lounge',function(request,response){
             city = request.query.city
 
@@ -68,7 +73,7 @@ app.get ( '/results', function ( request, response ) {
 
 app.post ( '/search', function ( request, response ) {
 	var input = request.body.entry
-	var searchParameter = input.toLowerCase();
+	var searchParameter = input.toLowerCase()
 
 	if ( request.body.options == "city") {
 		Lounge.findAll({
@@ -111,9 +116,9 @@ app.post ( '/search', function ( request, response ) {
 app.get ('/amsterdam', function ( request, response ) {
 	Lounge.findAll({
 		where: {
-			city: amsterdam
+			city: "amsterdam"
 		}
-	}).then(function(){
+	}).then(function(lounges){
 		response.render( 'amsterdam', {
 			lounges: lounges
 		})
@@ -123,9 +128,9 @@ app.get ('/amsterdam', function ( request, response ) {
 app.get ('/rotterdam', function ( request, response ) {
 	Lounge.findAll({
 		where: {
-			city: rotterdam
+			city: "rotterdam"
 		}
-	}).then(function(){
+	}).then(function(lounges){
 		response.render( 'rotterdam', {
 			lounges: lounges
 		})
@@ -135,9 +140,9 @@ app.get ('/rotterdam', function ( request, response ) {
 app.get ('/utrecht', function ( request, response ) {
 	Lounge.findAll({
 		where: {
-			city: utrecht
+			city: "utrecht"
 		}
-	}).then(function(){
+	}).then(function(lounges){
 		response.render( 'utrecht', {
 			lounges: lounges
 		})

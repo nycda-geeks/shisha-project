@@ -1,0 +1,186 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		title Shisha International 
+		// Bootstrap Core CSS
+		link(rel='stylesheet', href='css/bootstrap.min.css', type='text/css')
+		// Custom Fonts
+		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', rel='stylesheet', type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic', rel='stylesheet', type='text/css')
+		link(rel='stylesheet', href='font-awesome/css/font-awesome.min.css', type='text/css')
+		// Plugin CSS
+		link(rel='stylesheet', href='css/magnific-popup.css', type='text/css')
+		// Custom CSS
+		link(rel='stylesheet', href='css/creative.css', type='text/css')
+		link(rel='stylesheet', href='css/mystyle.css', type='text/css')
+		// Scripts
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js')
+		// Toggle Maps on click
+		script.
+			$(document).ready(function(){
+			$("#maps-button").click(function(){
+			$("#map").slideToggle();
+			});
+			});
+	body#page-top
+		nav#mainNav.navbar.navbar-default.navbar-fixed-top
+			.container-fluid
+				// Brand and toggle get grouped for better mobile display
+				.navbar-header
+					button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand.page-scroll(href='#page-top') Shisha Finder
+				// Collect the nav links, forms, and other content for toggling
+				#bs-example-navbar-collapse-1.collapse.navbar-collapse
+					ul.nav.navbar-nav.navbar-right
+						li
+							a.page-scroll(href='#about') About
+						li
+							a.page-scroll(href='#services') Services
+						li
+							a.page-scroll(href='#contact') Contact
+				// /.navbar-collapse
+				// /.container-fluid
+		header#city
+			.header-content
+				.header-content-inner
+					h1 Find the best Shisha lounges in Rotterdam
+		// View-options
+		#maps-bar.row
+			.col-lg-12.text-center
+				a#maps-button.btn.btn-info.btn-lg
+					span.glyphicon.glyphicon-map-marker
+					|  Map
+			
+		// Google maps
+		#map
+		// Shisha grid
+		section#shisha-city.bg-light-gray
+			.container
+				.row
+					.col-md-4.col-sm-6.shisha-city-item
+						a.shisha-city-link(href='#shisha-cityModal1', data-toggle='modal')
+							.shisha-city-hover
+								.shisha-city-hover-content
+									i.fa.fa-plus.fa-3x
+							img.img-responsive(src='img/city-banners/rotterdam/rot-1.jpg', alt='')
+						.shisha-city-caption
+							h4.shisha-title Round Icons
+							p.text-muted No reservation needed
+					.col-md-4.col-sm-6.shisha-city-item
+						a.shisha-city-link(href='#shisha-cityModal2', data-toggle='modal')
+							.shisha-city-hover
+								.shisha-city-hover-content
+									i.fa.fa-plus.fa-3x
+							img.img-responsive(src='img/city-banners/rotterdam/rot-2.jpg', alt='')
+						.shisha-city-caption
+							h4.shisha-title Startup Framework
+							p.text-muted No reservation needed
+					.col-md-4.col-sm-6.shisha-city-item
+						a.shisha-city-link(href='#shisha-cityModal3', data-toggle='modal')
+							.shisha-city-hover
+								.shisha-city-hover-content
+									i.fa.fa-plus.fa-3x
+							img.img-responsive(src='img/city-banners/rotterdam/rot-3.jpg', alt='')
+						.shisha-city-caption
+							h4.shisha-title Treehouse
+							p.text-muted No reservation needed
+					.col-md-4.col-sm-6.shisha-city-item
+						a.shisha-city-link(href='#shisha-cityModal4', data-toggle='modal')
+							.shisha-city-hover
+								.shisha-city-hover-content
+									i.fa.fa-plus.fa-3x
+							img.img-responsive(src='img/city-banners/rotterdam/rot-4.jpg', alt='')
+						.shisha-city-caption
+							h4.shisha-title Golden
+							p.text-muted No reservation needed
+					.col-md-4.col-sm-6.shisha-city-item
+						a.shisha-city-link(href='#shisha-cityModal5', data-toggle='modal')
+							.shisha-city-hover
+								.shisha-city-hover-content
+									i.fa.fa-plus.fa-3x
+							img.img-responsive(src='img/city-banners/rotterdam/rot-5.jpg', alt='')
+						.shisha-city-caption
+							h4.shisha-title Escape
+							p.text-muted No reservation needed
+					.col-md-4.col-sm-6.shisha-city-item
+						a.shisha-city-link(href='#shisha-cityModal6', data-toggle='modal')
+							.shisha-city-hover
+								.shisha-city-hover-content
+									i.fa.fa-plus.fa-3x
+							img.img-responsive(src='img/city-banners/rotterdam/rot-6.jpg', alt='')
+						.shisha-city-caption
+							h4.shisha-title Dreams
+							p.text-muted No reservation needed
+					.No.reservation.needed
+						.col-md-4.col-sm-6.shisha-city-item
+							a.shisha-city-link(href='#shisha-cityModal1', data-toggle='modal')
+								.shisha-city-hover
+									.shisha-city-hover-content
+										i.fa.fa-plus.fa-3x
+								img.img-responsive(src='img/city-banners/rotterdam/rot-1.jpg', alt='')
+							.shisha-city-caption
+								h4.shisha-title Round Icons
+								p.text-muted No reservation needed
+						.col-md-4.col-sm-6.shisha-city-item
+							a.shisha-city-link(href='#shisha-cityModal2', data-toggle='modal')
+								.shisha-city-hover
+									.shisha-city-hover-content
+										i.fa.fa-plus.fa-3x
+								img.img-responsive(src='img/city-banners/rotterdam/rot-2.jpg', alt='')
+							.shisha-city-caption
+								h4.shisha-title Startup Framework
+								p.text-muted No reservation needed
+						.col-md-4.col-sm-6.shisha-city-item
+							a.shisha-city-link(href='#shisha-cityModal3', data-toggle='modal')
+								.shisha-city-hover
+									.shisha-city-hover-content
+										i.fa.fa-plus.fa-3x
+								img.img-responsive(src='img/city-banners/rotterdam/rot-3.jpg', alt='')
+							.shisha-city-caption
+								h4.shisha-title Treehouse
+								p.text-muted No reservation needed
+						.col-md-4.col-sm-6.shisha-city-item
+							a.shisha-city-link(href='#shisha-cityModal4', data-toggle='modal')
+								.shisha-city-hover
+									.shisha-city-hover-content
+										i.fa.fa-plus.fa-3x
+								img.img-responsive(src='img/city-banners/rotterdam/rot-4.jpg', alt='')
+							.shisha-city-caption
+								h4.shisha-title Golden
+								p.text-muted No reservation needed
+						.col-md-4.col-sm-6.shisha-city-item
+							a.shisha-city-link(href='#shisha-cityModal5', data-toggle='modal')
+								.shisha-city-hover
+									.shisha-city-hover-content
+										i.fa.fa-plus.fa-3x
+								img.img-responsive(src='img/city-banners/rotterdam/rot-5.jpg', alt='')
+							.shisha-city-caption
+								h4.shisha-title Escape
+								p.text-muted No reservation needed
+						.col-md-4.col-sm-6.shisha-city-item
+							a.shisha-city-link(href='#shisha-cityModal6', data-toggle='modal')
+								.shisha-city-hover
+									.shisha-city-hover-content
+										i.fa.fa-plus.fa-3x
+								img.img-responsive(src='img/city-banners/rotterdam/rot-6.jpg', alt='')
+							.shisha-city-caption
+								h4.shisha-title Dreams
+								p.text-muted No reservation needed
+		script.
+			function initMap() {
+			var mapDiv = document.getElementById('map');
+			var map = new google.maps.Map(mapDiv, {
+			center: {lat: 52.3702160, lng: 4.8951680},
+			zoom: 12
+			});
+			}
+		script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDSfiU9q-2LdmErSm1EpI0Ns9cJb4otyzo&callback=initMap')
