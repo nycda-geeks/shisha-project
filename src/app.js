@@ -9,7 +9,6 @@ var app = express()
 app.use( express.static( __dirname + '/public' ) )
 app.use( bodyParser.urlencoded( { extended: false } ) )
 
-
 // this means thats about the database called shisha
 
 var sequelize = new Sequelize('shisha', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
@@ -41,11 +40,6 @@ var Menu = sequelize.define('menu', {
 Lounge.hasMany(Menu);
 Menu.belongsTo(Lounge);
 
-
-
-
-
-
 app.set( "views", __dirname + "/views" )
 app.set ("view engine","jade");
 
@@ -68,18 +62,8 @@ app.get('/lounge',function(request,response){
                     }
                 }).then(function(thelounge){
                     response.render('lounge',{lijst: thelounge});
-                })
-            
-             
+                })          
 })
-
-
-
-
-
-
-
-
 
 app.get ( '/results', function ( request, response ) {
 	response.render ( 'results', {
@@ -127,10 +111,7 @@ app.post ( '/search', function ( request, response ) {
 	else {
 		response.send("Please choose a search parameter")
 	}
-
 })
-
-
 
 app.get ('/amsterdam', function ( request, response ) {
 	Lounge.findAll({
@@ -188,7 +169,6 @@ app.post('/test', function (request,response){
 		response.render('index')
 	})
 })
-
 
 sequelize.sync({force: false})
 var server = app.listen(3000 , function (){
