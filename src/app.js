@@ -42,16 +42,12 @@ Lounge.hasMany(Menu);
 Menu.belongsTo(Lounge);
 
 
-
-
-
-
 app.set( "views", __dirname + "/views" )
 app.set ("view engine","jade");
 
 //this is the index page
 app.get ( '/', function ( request, response ) {
-	response.render ( 'index')  
+	response.render ( 'index')
 } )
 
 // this is the test page that renders the index
@@ -61,7 +57,7 @@ app.get ('/test',function (request,response){
 
 app.get('/lounge',function(request,response){
             city = request.query.city
-                
+
                 Lounge.findAll({
                     where:{
                         city: request.query.city
@@ -69,15 +65,9 @@ app.get('/lounge',function(request,response){
                 }).then(function(thelounge){
                     response.render('lounge',{lijst: thelounge});
                 })
-            
-             
+
+
 })
-
-
-
-
-
-
 
 
 
@@ -87,7 +77,7 @@ app.get ( '/results', function ( request, response ) {
 	} )
 } )
 
-app.post ( '/search', function ( request, response ) { 
+app.post ( '/search', function ( request, response ) {
 	var input = request.body.entry
 	var searchParameter = input.toLowerCase();
 
@@ -138,7 +128,7 @@ app.get ('/amsterdam', function ( request, response ) {
 			city: amsterdam
 		}
 	}).then(function(){
-		response.render( 'amsterdam', { 
+		response.render( 'amsterdam', {
 			lounges: lounges
 		})
 	})
@@ -150,7 +140,7 @@ app.get ('/rotterdam', function ( request, response ) {
 			city: rotterdam
 		}
 	}).then(function(){
-		response.render( 'rotterdam', { 
+		response.render( 'rotterdam', {
 			lounges: lounges
 		})
 	})
@@ -162,7 +152,7 @@ app.get ('/utrecht', function ( request, response ) {
 			city: utrecht
 		}
 	}).then(function(){
-		response.render( 'utrecht', { 
+		response.render( 'utrecht', {
 			lounges: lounges
 		})
 	})
