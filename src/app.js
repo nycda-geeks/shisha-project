@@ -1,7 +1,8 @@
 var Sequelize = require('sequelize');
 var express = require('express');
 var bodyParser = require('body-parser');
-
+var sass = require('node-sass');
+var fs = require ("fs");
 var app = express()
 //app.use(bodyParser.urlencoded ({extended: false}));
 //app.use(express.static('./static'));
@@ -9,10 +10,29 @@ var app = express()
 app.use( express.static( __dirname + '/public' ) )
 app.use( bodyParser.urlencoded( { extended: false } ) )
 
+var sass = require ( 'node-sass' )
+
+
+
+
+
+
+sass.render({
+    file: './src/public/css/mystyle.scss'},
+    function(err, result){
+    console.log(result)
+    console.log(err)
+    fs.writeFile( './src/public/css/mystyle.css', result.css.toString(),function ( err ) {
+        if ( err ) throw err
+            console.log( 'Sass written to css' )
+}
+)
+
+    })
 
 // this means thats about the database called shisha
 
-var sequelize = new Sequelize('shisha', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
+var sequelize = new Sequelize('shisha', 'postgres', "Selim0ruc", {
 	host: 'localhost',
 	dialect: 'postgres',
 	define: {
@@ -72,8 +92,6 @@ app.get('/lounge',function(request,response){
             
              
 })
-
-
 
 
 
